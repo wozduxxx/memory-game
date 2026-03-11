@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+:root {
+    --border-radius-value: 10px;
+    --box-shadow-value: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --light-gray: #c0c0c0;
+    --green: #47c94b;
+}
+
+.card {
+    background: #FEA176;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: var(--border-radius-value);
+    box-shadow: var(--box-shadow-value);
+    transition: all 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+
+    span {
+        transform: rotateY(-180deg);
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &.flipped {
+        background: #fff;
+        transform: rotateY(180deg);
+    }
+    
+    &.matched {
+        background: var(--green);
+        cursor: default;
+    }
+}
+
+.controls {
+    border-radius: var(--border-radius-value);
+    box-shadow: var(--box-shadow-value);
+    width: 80dvw;
+    padding: 20px;
+    border: 1 px solid var(--light-gray);
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    .button-success {
+        margin-left: auto;
+    }
+}
+
+label{
+    font-size: 18px;
+    margin-right: 5px;
+}
+input {
+    width: 100px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid var(--light-gray);
+    margin-right: 40px;
+}
+.button-success{
+    background-color: var(--green);
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    transition: all .3s;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-value);
+
+    &:hover {
+        background: #3b8c3f;
+    }
+}
+
+.board {
+    display: grid;
+    gap: 10px;
+}
